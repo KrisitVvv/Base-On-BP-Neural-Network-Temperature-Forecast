@@ -8,16 +8,19 @@ import os
 parser = argparse.ArgumentParser(description='reptile city history weather')
 parser.add_argument('--area', '-a', type=str, default='chongqing', help='defalt:chongqing')
 parser.add_argument('--save-path', '-s', type=str, default='./reptile/output', help='save path，default:./reptile/output')
+parser.add_argument('--slow',action='store_true',default=False, help='slow mode')
 args = parser.parse_args()
 
 area = args.area
 save_path = args.save_path
+mode=args.slow
 
 os.makedirs(save_path, exist_ok=True)
 
 driver = webdriver.Edge()
+
 data=[]
-for i in range(2011,2025):
+for i in range(2011,2026):
     for j in range(1,13):
         if(j>=10):
             url='https://lishi.tianqi.com/'+area+'/'+str(i)+str(j)+'.html'
@@ -26,7 +29,10 @@ for i in range(2011,2025):
         driver.get(url)
         button=driver.find_element(By.CLASS_NAME,"lishidesc2")
         button.click()
-        time.sleep(1)
+        if mode:
+            time.seep(5)
+        else:
+            time.sleep(1)
         list_tag=driver.find_element(By.CLASS_NAME,"tian_three")
         items=list_tag.find_elements(By.TAG_NAME,"li")
         for item in items:
