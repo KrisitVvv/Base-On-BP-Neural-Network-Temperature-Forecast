@@ -1,6 +1,8 @@
 # <p align="center">Base on BP Neural Network's Temperature forecast</p>
 ## Introduction
+This project is a temperature forecast based on the BP neural network.I just use small dataset to train the model，therefore the model is not very accurate.
 
+If you have better methods to improve the model ablity,you can Through the PR method to contribute to the project.Or you find a new dataset,you can thought to issue tell me.
 ## Preparatory Work
 The code is running in conda environment,therefore you need to install conda first.
 
