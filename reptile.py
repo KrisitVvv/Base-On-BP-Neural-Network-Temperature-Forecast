@@ -17,8 +17,8 @@ os.makedirs(save_path, exist_ok=True)
 
 driver = webdriver.Edge()
 data=[]
-for i in range(2011,2012):
-    for j in range(1,2):
+for i in range(2011,2025):
+    for j in range(1,13):
         if(j>=10):
             url='https://lishi.tianqi.com/'+area+'/'+str(i)+str(j)+'.html'
         else:
