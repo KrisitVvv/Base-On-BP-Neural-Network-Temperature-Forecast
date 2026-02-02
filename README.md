@@ -27,8 +27,12 @@ Successful display the browser and that not have error,you can close the browser
 The data is from the website [China Weather](https://www.weather.com.cn/).You can use the command to run the program.
 ```bash
 python reptile.py --area chongqing \
--s ./reptile/output
+-s ./reptile/output \
+-b 2011 \ #begin year
+-e 2025 \ #end year
+--slow \    
 ```
+`use --slow in poor network conditions can decrease the failure rate.But will take longer time.`  
 Wait for program to finish,you will see the output file in the directory.
 ## Training
 Point at the datas I choose the BP model to train the data.For a better outcome,I introduce the L2 regularization and Early Stopping to prevent overfitting
